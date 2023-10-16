@@ -16,7 +16,7 @@ data_transform = transforms.Compose([
 ])
 
 # 导入image
-img_path = './dataset/predict/1.jpeg'
+img_path = '../dataset/predict/1.jpeg'
 assert os.path.exists(img_path), f"file:{img_path} is not exist."
 img = Image.open(img_path)
 plt.imshow(img)

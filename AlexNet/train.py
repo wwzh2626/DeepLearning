@@ -23,7 +23,7 @@ data_transform = {
                                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 }
 
-data_root = os.getcwd()
+data_root = os.path.dirname(os.getcwd())
 image_path = data_root + "/dataset/flower_data"
 train_dataset = datasets.ImageFolder(root=image_path + "/train",
                                      transform=data_transform["train"])
