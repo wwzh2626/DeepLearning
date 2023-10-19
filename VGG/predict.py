@@ -33,7 +33,26 @@ def main():
     with open(json_path, "r") as f:
         class_indict = json.load(f)
 
+    # create model
+    net = vgg("vgg16",num_classes=5)
+    net.to(device)
+    weight_path = "./VGGNet.pth"
+    assert os.path.exists(weight_path), "file: '{}' dose not exist.".format(weight_path)
+    net.load_state_dict(torch.load(weight_path, map_location=device))
+    net.eval()
+    with torch.no_grad():
+        output = torch.squeeze(net(img.to(device))).cpu()
+        predict = torch.softmax(output, dim=0)
+        predict_cla = torch.argmax(predict).numpy()
 
+
+    print_res = "class: {}   prob: {:.3}".format(class_indict[str(predict_cla)],
+                                                 predict[predict_cla].numpy())
+    plt.title(print_res)
+    for i in range(len(predict)):
+        print("class: {:10}   prob: {:.3}".format(class_indict[str(i)],
+                                                  predict[i].numpy()))
+    plt.show()
 
 if __name__ == '__main__':
     main()
