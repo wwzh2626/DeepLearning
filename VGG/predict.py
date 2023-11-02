@@ -3,7 +3,7 @@ import os
 import json
 from PIL import Image
 from torchvision import transforms
-from module import vgg
+from model import vgg
 import matplotlib.pyplot as plt
 import numpy as np
 

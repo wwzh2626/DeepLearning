@@ -6,7 +6,7 @@ from PIL import Image
 from torchvision import transforms
 import matplotlib.pyplot as plt
 
-from module import GoogLeNet
+from model import GoogLeNet
 
 
 def main():

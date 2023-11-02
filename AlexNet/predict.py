@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import torch
 from torchvision import transforms
-from module import  AlexNet
+from model import  AlexNet
 import json
 
 

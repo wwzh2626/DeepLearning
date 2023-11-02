@@ -3,7 +3,7 @@ from tqdm import tqdm
 import sys
 import torch.nn as nn
 import os
-from module import vgg
+from model import vgg
 from torchvision import transforms,datasets
 import json
 import torch.optim as optim

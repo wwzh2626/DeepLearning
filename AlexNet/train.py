@@ -1,5 +1,5 @@
 import torch
-from module import AlexNet
+from model import AlexNet
 from torchvision import transforms, datasets, utils
 import numpy as np
 import sys
